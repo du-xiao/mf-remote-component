@@ -9,7 +9,7 @@ export default defineConfig({
       name: "usercard_remote",
       filename: "remoteEntry.js",   // 远程暴露入口
       exposes: {
-        "./UserCard": "./src/UserCard.jsx",  // 暴露 UserCard 组件
+        "UserCard": "./src/UserCard.jsx",  // 暴露 UserCard 组件
       },
       shared: ["react", "react-dom"],       // 必须共享 React
     }),
