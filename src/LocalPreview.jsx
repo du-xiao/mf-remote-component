@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import UserCard from './UserCard';
+import UserCard from './components/UserCard';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div style={{ padding: 40 }}>

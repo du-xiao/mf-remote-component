@@ -6,18 +6,20 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "usercard_remote",
-      filename: "remoteEntry.js",   // 远程暴露入口
+      name: "userCardRemote",
+      filename: "remoteEntry.js",
       exposes: {
-        "UserCard": "./src/UserCard.jsx",  // 暴露 UserCard 组件
+        "./UserCard": "./src/components/UserCard.jsx",
       },
-      shared: ["react", "react-dom"],       // 必须共享 React
+      shared: ["react", "react-dom"],
     }),
   ],
   build: {
     target: "esnext",
-    minify: false,           // 必须，否则 remoteEntry 会被压缩导致 MF 失效
+    minify: false,
     cssCodeSplit: true,
   },
+  server: {
+    port: 5173,
+  },
 });
-
